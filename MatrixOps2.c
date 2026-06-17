@@ -61,7 +61,7 @@ MatStatus inverseMat(const Matrix* m, Matrix* out) {
         for (int j = 0; j < n; ++j) {
             Matrix sub = minor_matrix(m, i, j);
             double minor_det;
-            determinant(&sub, &minor_det);   /* sub е (n-1)x(n-1) <= 3x3 */
+            determinant(&sub, &minor_det);   
             matrix_free(&sub);
             int sign = ((i + j) % 2 == 0) ? 1 : -1;
             cof.data[i][j] = sign * minor_det;
